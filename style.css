@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #222;
+}
+ul {
+    position: relative;
+    display: flex;
+    transform-style: preserve-3d;
+    transform: rotate(-15deg) skew(25deg);
+}
+ul li {
+    position: relative;
+    list-style: none;
+    width: 55px;
+    height: 55px;
+    margin: 0 6px;
+}
+ul li::before {
+    position: absolute;
+    content: ' ';
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: #2a2a2a;
+    transform-origin: top;
+    transform: skewX(-41deg);
+}
+ul li::after {
+    position: absolute;
+    content: ' ';
+    top: 0;
+    left: -9px;
+    width: 9px;
+    height: 100%;
+    background: #2a2a2a;
+    transform-origin: right;
+    transform: skewY(-49deg);
+}
+ul li span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex !important;
+    width: 100%;
+    height: 100%;
+    background: #333;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 30px !important;
+    transition: 0.1s;
+}
+ul li:hover span {
+    z-index: 1000;
+    transition: 0.5s;
+    color: #fff;
+    box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+ul li:hover span:nth-child(5),
+ul li:hover span:nth-child(10) {
+    transform: translate(40px , -40px);
+    opacity: 1;
+}
+ul li:hover span:nth-child(4),
+ul li:hover span:nth-child(9) {
+    transform: translate(30px , -30px);
+    opacity: 0.8;
+}
+ul li:hover span:nth-child(3),
+ul li:hover span:nth-child(8) {
+    transform: translate(20px , -20px);
+    opacity: 0.6;
+}
+ul li:hover span:nth-child(2),
+ul li:hover span:nth-child(7) {
+    transform: translate(10px , -10px);
+    opacity: 0.4;
+}
+ul li:hover span:nth-child(1),
+ul li:hover span:nth-child(6) {
+    transform: translate(0px , 0px);
+    opacity: 0.2;
+}
+
+ul li:nth-child(1):hover span,
+ul li:nth-child(6):hover span {
+    background: #3b5999;
+} 
+ul li:nth-child(2):hover span,
+ul li:nth-child(7):hover span {
+    background:linear-gradient( to bottom ,rgb(30, 118, 196), rgb(188, 59, 145), rgb(105, 140, 1) ) ;
+}
+ul li:nth-child(3):hover span,
+ul li:nth-child(8):hover span {
+    background: linear-gradient( to right ,rgb(30, 118, 196), rgb(203, 54, 54) );
+}
+ul li:nth-child(4):hover span,
+ul li:nth-child(9):hover span {
+    background: #25d366;
+}
+ul li:nth-child(5):hover span,
+ul li:nth-child(10):hover span {
+    background: #1d1d36;
+}
